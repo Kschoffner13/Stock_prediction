@@ -14,9 +14,15 @@ The model uses the following 5 features for prediction:
 
 ## Model Architectures
 - **LSTM**: Bidirectional, 2 layers, 64 hidden units, 20% dropout
-- **GRU**: Bidirectional, 2 layers, 64 hidden units, 20% dropout
+- **GRU**: Bidirectional, 2 layers, 128 hidden units, 30% dropout (Changed to increase peprformance)
 - **Input**: 60 days of historical data (5 features per day)
 - **Output**: Next day's closing price
+
+## Data Requirements
+- CSV files must be in `data/archive/stocks/` or `data/archive/etfs/`
+- Required columns: Date, Open, High, Low, Close, Volume
+
+**These CSV files must be downlaoded from**: https://www.kaggle.com/datasets/jacksoncrow/stock-market-dataset and put in the proper /data/archive folder in the root directory. 
 
 ## How to Run
 
@@ -46,6 +52,4 @@ After training, the notebook generates:
 - Actual vs. predicted price comparison plot
 - Performance metrics in original price scale
 
-## Data Requirements
-- CSV files must be in `data/archive/stocks/` or `data/archive/etfs/`
-- Required columns: Date, Open, High, Low, Close, Volume
+
